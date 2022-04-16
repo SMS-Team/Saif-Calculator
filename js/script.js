@@ -1,10 +1,18 @@
 // Dom elements
 let btnContainer = document.querySelector('.btn-container')
-let input = document.querySelector('input')
+let input = document.querySelector('input[type="text"]')
+let color1 = document.getElementById('color1')
+let color2 = document.getElementById('color2')
 
+
+// general styles 
+color1.value = '#7a7fba'
+color2.value = '#11c37c'
 
 // events
 btnContainer.addEventListener('click',calculate)
+color1.addEventListener('input',changeColor)
+color2.addEventListener('input',changeColor)
 
 
 // actions - functions
@@ -29,6 +37,9 @@ function calculate(e){
     }
 }
 
+function changeColor(){
+    document.querySelector('body').style.background = `linear-gradient(to bottom right ,${color1.value},${color2.value})`
+}
 
 
 
